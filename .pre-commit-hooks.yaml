@@ -1,0 +1,5 @@
+- id: check-name-regex
+  name: check file names with regex
+  description: ensure files on the repository follow a naming convention.
+  language: python
+  entry: check-name-regex
