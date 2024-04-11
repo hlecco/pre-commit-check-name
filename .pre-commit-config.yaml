@@ -8,3 +8,10 @@ repos:
     pass_filenames: false
     always_run: true
     additional_dependencies: [pytest, pytest-cov]
+- repo: https://github.com/PyCQA/flake8
+  rev: 7.0.0
+  hooks:
+  - id: flake8
+    name: Python code formatting
+    args: [--docstring-convention=numpy]
+    additional_dependencies: [flake8-docstrings]
