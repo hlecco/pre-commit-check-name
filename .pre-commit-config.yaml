@@ -1,0 +1,10 @@
+repos:
+- repo: local
+  hooks:
+  - id: pytest
+    name: Unit tests
+    entry: pytest --cov=pre_commit_hooks --cov-report=term-missing --cov-fail-under=95
+    language: python
+    pass_filenames: false
+    always_run: true
+    additional_dependencies: [pytest, pytest-cov]

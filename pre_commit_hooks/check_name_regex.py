@@ -44,5 +44,5 @@ def main(argv=None):
     return check_name_regex(args.filenames, args.regex, args.dir)
 
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: nocover
     raise SystemExit(main())
