@@ -1,8 +1,9 @@
+"""Tests check_name_regex.py."""
 import pre_commit_hooks.check_name_regex as check_name_regex
 
 
 def test_check_all_match():
-    '''Assert every filename matches at least one regex.'''
+    """Assert every filename matches at least one regex."""
     filenames = ['foo', 'bar']
     regex = ['^f', '^b']
     dir_ = None
@@ -11,7 +12,7 @@ def test_check_all_match():
 
 
 def test_check_number_unmatched():
-    '''Check if the number of unmatched filenames is correct.'''
+    """Check if the number of unmatched filenames is correct."""
     filenames = ['foo', 'bar', 'baz']
     regex = ['^f']
     dir_ = None
@@ -20,7 +21,7 @@ def test_check_number_unmatched():
 
 
 def test_dir_filter():
-    '''Filter out filenames that are not on checked directories.'''
+    """Filter out filenames that are not on checked directories."""
     filenames = ['somedir/foo1', 'somedir/bar1', 'foo2', 'bar2']
     regex = ['^f']
     dir_ = ['somedir']
@@ -29,7 +30,7 @@ def test_dir_filter():
 
 
 def test_argparse():
-    '''Check parameters usage on main call.'''
+    """Check parameters usage on main call."""
     argv = [
         '-r', '^f',
         '-r', '^b',

@@ -1,0 +1,17 @@
+repos:
+- repo: local
+  hooks:
+  - id: pytest
+    name: Unit tests
+    entry: pytest --cov=pre_commit_hooks --cov-report=term-missing --cov-fail-under=95
+    language: python
+    pass_filenames: false
+    always_run: true
+    additional_dependencies: [pytest, pytest-cov]
+- repo: https://github.com/PyCQA/flake8
+  rev: 7.0.0
+  hooks:
+  - id: flake8
+    name: Python code formatting
+    args: [--docstring-convention=numpy]
+    additional_dependencies: [flake8-docstrings]
